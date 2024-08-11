@@ -20,7 +20,13 @@ const MobileNav = () => {
     <section className='w-full max-w-[260px] '>
       <Sheet>
         <SheetTrigger asChild className='cursor-pointer'>
-          <Image src='icons/hamburger.svg' alt='menu' width={36} height={36} />
+          <Image
+            src='icons/hamburger.svg'
+            alt='menu'
+            width={36}
+            height={36}
+            className='cursor-pointer sm:hidden'
+          />
         </SheetTrigger>
         <SheetContent side='left' className='border-none bg-dark-1'>
           <Link href='/' className='flex items-center gap-1'>
