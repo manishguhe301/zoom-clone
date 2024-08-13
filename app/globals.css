@@ -3,12 +3,55 @@
 @tailwind utilities;
 
 @layer utilities {
-  .flex-center{
+  .flex-center {
     @apply flex justify-center items-center;
   }
-  .flex-between{
+  .flex-between {
     @apply flex justify-between items-center;
   }
+}
+
+/* ==== clerk class override ===== */
+
+.cl-internal-1dauvpw{
+  display: none;
+}
+
+.cl-userButtonPopoverActionButtonIcon {
+  color: white;
+}
+
+.cl-logoBox {
+  height: 40px;
+}
+
+.cl-dividerLine {
+  background: #252a41;
+  height: 2px;
+}
+
+.cl-socialButtonsIconButton {
+  border: 3px solid #565761;
+}
+
+.cl-internal-wkkub3 {
+  color: white;
+}
+.cl-userButtonPopoverActionButton {
+  color: white;
+}
+
+.cl-formFieldInputShowPasswordButton {
+  color: white;
+}
+
+.cl-socialButtonsBlockButton {
+  color: white;
+  border: 3px solid #565761;
+}
+
+.cl-providerIcon__github {
+  filter: invert(1) 
 }
 
 @layer base {
