@@ -21,7 +21,17 @@ const NavBar = () => {
       </Link>
       <div className='flex-between gap-5'>
         <SignedIn>
-          <UserButton />
+          <UserButton
+            appearance={{
+              elements: {
+                avatarBox: 'h-10 w-10',
+                userButtonPopoverActionButton__manageAccount:
+                  'bg-dark-1 text-white hover:text-gray-100',
+                userButtonPopoverActionButton__signOut:
+                  'bg-dark-1 text-white hover:text-gray-100',
+              },
+            }}
+          />
         </SignedIn>
         <MobileNav />
       </div>

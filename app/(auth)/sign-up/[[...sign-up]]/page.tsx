@@ -4,7 +4,14 @@ import React from 'react';
 const SignUpPage = () => {
   return (
     <main className='h-screen flex w-full items-center justify-center'>
-      <SignUp />
+      <SignUp
+        appearance={{
+          elements: {
+            socialButtonsBlockButton__google:
+              'bg-white text-black hover:bg-gray-100',
+          },
+        }}
+      />
     </main>
   );
 };
