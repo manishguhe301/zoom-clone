@@ -70,20 +70,20 @@ const MeetingTypeList = () => {
   const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${callDetails?.id}`;
 
   return (
-    <section className='grid grid-cols-1 gap-5 md:grid-cols-2  xl:grid-cols-4'>
+    <section className='grid grid-cols-1 w-full gap-5 md:grid-cols-2  xl:grid-cols-3'>
       <HomeCard
         img='/icons/add-meeting.svg'
         title='New Meeting'
         description='Start an instant meeting'
         handleClick={() => setMeetingState('isInstantMeeting')}
       />
-      <HomeCard
+      {/* <HomeCard
         img='/icons/join-meeting.svg'
         title='Join Meeting'
         description='via invitation link'
         className='bg-blue-1'
         handleClick={() => setMeetingState('isJoiningMeeting')}
-      />
+      /> */}
       <HomeCard
         img='/icons/schedule.svg'
         title='Schedule Meeting'
@@ -162,7 +162,7 @@ const MeetingTypeList = () => {
         handleClick={createMeeting}
       />
 
-      <MeetingModal
+      {/* <MeetingModal
         isOpen={meetingState === 'isJoiningMeeting'}
         onClose={() => setMeetingState(undefined)}
         title='Enter Meeting Link'
@@ -178,7 +178,7 @@ const MeetingTypeList = () => {
           className='border-none bg-dark-3 focus-visible:ring-0 focus-visible:ring-offset-0'
           onChange={(e) => setValues({ ...values, link: e.target.value })}
         />
-      </MeetingModal>
+      </MeetingModal> */}
     </section>
   );
 };

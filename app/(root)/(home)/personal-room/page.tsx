@@ -53,7 +53,7 @@ const PersonalRoom = () => {
     router.push(`/meeting/${meetingId}?personal=true`);
   };
 
-  const meetingLink = `/meeting/${meetingId}?personal=true`;
+  const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${meetingId}?personal=true`;
 
   return (
     <section className='flex size-full flex-col gap-10 text-white'>
@@ -64,7 +64,7 @@ const PersonalRoom = () => {
           description={`${user?.firstName}'s Meeting Room`}
         />
         <Table title='Meeting ID' description={meetingId!} />
-        <Table title='Invite Link' description={`${process.env.NEXT_PUBLIC_BASE_URL}${meetingLink}`} />
+        <Table title='Invite Link' description={meetingLink} />
       </div>
       <div className='flex gap-5'>
         <Button className='bg-blue-1' onClick={startRoom}>
