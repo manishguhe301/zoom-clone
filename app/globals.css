@@ -19,6 +19,13 @@
 
 .str-video__participant-details {
   color: white;
+  width: 100%;
+}
+
+.str-video__participant-details__name {
+  width: 30%;
+  overflow: hidden;
+  text-overflow: ellipsis !important;
 }
 
 .str-video__menu-container {
@@ -74,7 +81,6 @@
 .cl-userButtonPopoverActionButton {
   color: white;
 }
-
 
 @layer utilities {
   .flex-center {
