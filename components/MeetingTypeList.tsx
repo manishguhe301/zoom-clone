@@ -169,13 +169,8 @@ const MeetingTypeList = () => {
         className='text-center'
         buttonText='Start Meeting'
         handleClick={() => {
-          try {
-            const link = new URL(values.link, window.location.origin);
-            router.push(link.pathname + link.search);
-          } catch (error) {
-            console.error('Invalid meeting link:', error);
-            alert('Please enter a valid meeting link');
-          }
+          const sanitizedLink = values.link.replace(window.location.origin, '');
+          router.push(sanitizedLink);
         }}
       >
         <Input
