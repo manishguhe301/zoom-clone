@@ -169,18 +169,14 @@ const MeetingTypeList = () => {
         className='text-center'
         buttonText='Start Meeting'
         handleClick={() => {
-          const sanitizedLink = values.link.replace(window.location.origin, '');
-          router.push(sanitizedLink);
+          console.log(values.link);
+          router.push(values.link);
         }}
       >
         <Input
           placeholder='Meeting Link'
           className='border-none bg-dark-3 focus-visible:ring-0 focus-visible:ring-offset-0'
-          onChange={(e) => {
-            const rawLink = e.target.value;
-            const sanitizedLink = rawLink.replace(window.location.origin, '');
-            setValues({ ...values, link: sanitizedLink });
-          }}
+          onChange={(e) => setValues({ ...values, link: e.target.value })}
         />
       </MeetingModal>
     </section>
