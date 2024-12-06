@@ -168,12 +168,24 @@ const MeetingTypeList = () => {
         title='Enter Meeting Link'
         className='text-center'
         buttonText='Start Meeting'
-        handleClick={() => router.push(values.link)}
+        handleClick={() => {
+          try {
+            const link = new URL(values.link, window.location.origin);
+            router.push(link.pathname + link.search);
+          } catch (error) {
+            console.error('Invalid meeting link:', error);
+            alert('Please enter a valid meeting link');
+          }
+        }}
       >
         <Input
           placeholder='Meeting Link'
           className='border-none bg-dark-3 focus-visible:ring-0 focus-visible:ring-offset-0'
-          onChange={(e) => setValues({ ...values, link: e.target.value })}
+          onChange={(e) => {
+            const rawLink = e.target.value;
+            const sanitizedLink = rawLink.replace(window.location.origin, '');
+            setValues({ ...values, link: sanitizedLink });
+          }}
         />
       </MeetingModal>
     </section>
